@@ -1,17 +1,92 @@
 <!DOCTYPE html>
 <html>
-<title>W3.CSS</title>
+<head>
+<title>W3.CSS Layout Sederhana</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/5/w3.css">
+<style>
+  .container-flex {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+  }
+  .profil-box { width: 30%; }
+  .tab-box { width: 70%; }
+</style>
+</head>
 <body>
 
 <div class="w3-container">
-  <div class="w3-card" style="width:50%">
-    <img src="https://www.w3schools.com/w3css/img_avatar1.png" alt="Person" style="width:100%">
-    <div class="w3-container">
-      <h4><b>Kaedehera Kazuha</b></h4>
-      <p>Boss of All Boss</p>
+  <h3><b>Character Details</b></h3>
+
+  <div class="container-flex">
+    
+    <div class="profil-box">
+      <div class="w3-card">
+        <img src="https://www.w3schools.com/w3images/avatar1.png" style="width:100%">
+        <div class="w3-container">
+          <h4><b>Kaedehara Kazuha</b></h4>
+          <p>Boss of All Boss</p>
+        </div>
+      </div>
     </div>
-  </div>
+
+    <div class="tab-box">
+      <div class="w3-bar w3-light-grey">
+        <button class="w3-bar-item w3-button tablink w3-pink" onclick="openTab(event,'General')">General</button>
+        <button class="w3-bar-item w3-button tablink" onclick="openTab(event,'Gameplay')">Gameplay</button>
+        <button class="w3-bar-item w3-button tablink" onclick="openTab(event,'Constellations')">Constellations</button>
+      </div>
+      
+      <div id="General" class="w3-container w3-border city">
+        <h2>General</h2>
+        <p>Kaedehara Kazuha is a playable Anemo character in Genshin Impact.</p>
+        <p>A wandering samurai of the once-famed Kaedehara Clan with an ability to read the sounds of nature, Kazuha 
+            is a temporary crewmember of The Crux. Despite being burdened by the many happenings of his past, 
+            he still maintains an easygoing disposition.</p>
+      </div>
+
+      <div id="Gameplay" class="w3-container w3-border city" style="display:none">
+        <h2>Gameplay</h2>
+        <p>Normal Attack
+        <br>Performs up to 5 rapid strikes.</p>
+        <p>Charged Attack
+        <br>Consumes a certain amount of Stamina to unleash 2 rapid sword strikes.</p>
+        <p>Plunging Attack
+        <br>Plunges from mid-air to strike the ground below, damaging opponents along the path and dealing AoE 
+            DMG upon impact. If this Plunging Attack is triggered by Chihayaburu, it will be converted to 
+            Plunging Attack: Midare Ranzan.</p>
+        <p>Plunging Attack: Midare Ranzan
+        <br>When a Plunging Attack is performed using the effects of the Elemental Skill Chihayaburu, Plunging 
+            Attack DMG is converted to Anemo DMG and will create a small wind tunnel via a secret blade 
+            technique that pulls in nearby objects and opponents.</p>
+      </div>
+
+      <div id="Constellations" class="w3-container w3-border city" style="display:none">
+        <h2>Constellations</h2>
+        <p>Constellation Level 6, Crimson Momiji: "After using Chihayaburu or Kazuha Slash, Kaedehara 
+            Kazuha gains an Anemo Infusion for 5s. Additionally, each point of Elemental Mastery will increase the DMG 
+            dealt by Kaedehara Kazuha's Normal, Charged, and Plunging Attacks by 0.2%."</p>
+      </div>
+    </div>
+
+  </div> </div>
+
+<script>
+function openTab(evt, tabName) {
+  var i, x, tablinks;
+  x = document.getElementsByClassName("city");
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablink");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" w3-pink", "");
+  }
+  document.getElementById(tabName).style.display = "block";
+  evt.currentTarget.className += " w3-pink";
+}
+</script>
+
 </body>
 </html>
