@@ -3,24 +3,15 @@
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/5/w3.css">
-<style>
-  .container-flex {
-    display: flex;
-    gap: 20px;
-    align-items: flex-start;
-  }
-  .profil-box { width: 30%; }
-  .tab-box { width: 70%; }
-</style>
 </head>
 <body>
 
 <div class="w3-container">
   <h3><b>Character Details</b></h3>
 
-  <div class="container-flex">
+  <div class="w3-row">
     
-    <div class="profil-box">
+    <div class="w3-col l4 m4 w3-container">
       <div class="w3-card">
         <img src="https://www.w3schools.com/w3images/avatar1.png" style="width:100%">
         <div class="w3-container">
@@ -30,7 +21,7 @@
       </div>
     </div>
 
-    <div class="tab-box">
+    <div class="w3-col l8 m8 w3-container">
       <div class="w3-bar w3-light-grey">
         <button class="w3-bar-item w3-button tablink w3-pink" onclick="openTab(event,'General')">General</button>
         <button class="w3-bar-item w3-button tablink" onclick="openTab(event,'Gameplay')">Gameplay</button>
@@ -47,26 +38,16 @@
 
       <div id="Gameplay" class="w3-container w3-border city" style="display:none">
         <h2>Gameplay</h2>
-        <p>Normal Attack
-        <br>Performs up to 5 rapid strikes.</p>
-        <p>Charged Attack
-        <br>Consumes a certain amount of Stamina to unleash 2 rapid sword strikes.</p>
-        <p>Plunging Attack
-        <br>Plunges from mid-air to strike the ground below, damaging opponents along the path and dealing AoE 
-            DMG upon impact. If this Plunging Attack is triggered by Chihayaburu, it will be converted to 
-            Plunging Attack: Midare Ranzan.</p>
-        <p>Plunging Attack: Midare Ranzan
-        <br>When a Plunging Attack is performed using the effects of the Elemental Skill Chihayaburu, Plunging 
-            Attack DMG is converted to Anemo DMG and will create a small wind tunnel via a secret blade 
-            technique that pulls in nearby objects and opponents.</p>
+        <p><b>Normal Attack</b><br>Performs up to 5 rapid strikes.</p>
+        <p><b>Charged Attack</b><br>Consumes a certain amount of Stamina to unleash 2 rapid sword strikes.</p>
+        <p><b>Plunging Attack: Midare Ranzan</b><br>DMG is converted to Anemo DMG and creates a small wind tunnel.</p>
       </div>
 
       <div id="Constellations" class="w3-container w3-border city" style="display:none">
-        <h2>Constellations</h2>
-        <p>Constellation Level 6, Crimson Momiji: "After using Chihayaburu or Kazuha Slash, Kaedehara 
-            Kazuha gains an Anemo Infusion for 5s. Additionally, each point of Elemental Mastery will increase the DMG 
+         <h2>Constellations</h2>
+        <p>Constellation Level 6, Crimson Momiji: "After using Chihayaburu or Kazuha Slash, Kaedehara
+            Kazuha gains an Anemo Infusion for 5s. Additionally, each point of Elemental Mastery will increase the DMG
             dealt by Kaedehara Kazuha's Normal, Charged, and Plunging Attacks by 0.2%."</p>
-      </div>
     </div>
 
   </div> </div>
